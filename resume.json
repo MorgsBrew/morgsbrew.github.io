@@ -1,0 +1,177 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Dr Morgan John Brand",
+    "label": "Generalist Scientist · Microbiology & Systems",
+    "url": "",
+    "summary": "A generalist scientist and PhD graduate. I own and live on a stretch of the KwaZulu-Natal coast; I grow bananas on it my own way, and I'm less interested in farming the land than in coming to understand it — reading it closely enough to work with how it already behaves. Microbiology and systems are things I experience here first-hand, not only study. Trained through aquaculture and microbiology, I think in systems: soil, water, data, and the microbial life that binds them together. I move easily between the lab, the field, and the codebase, with work spanning reproducible data science, applied AI, geospatial analysis, and the living systems of the land itself. What connects it is a scientist's instinct for how a whole system behaves, and a builder's habit of turning messy real-world data into something clear enough to act on.",
+    "location": {
+      "city": "Marina Beach",
+      "region": "KwaZulu-Natal",
+      "countryCode": "ZA"
+    },
+    "profiles": [
+      { "network": "ORCID", "username": "0000-0002-1392-4742", "url": "https://orcid.org/0000-0002-1392-4742" },
+      { "network": "GitHub", "username": "morgsbrew", "url": "https://github.com/morgsbrew" },
+      { "network": "LinkedIn", "username": "Morgan Brand", "url": "https://www.linkedin.com/in/morgan-brand" },
+      { "network": "YouTube", "username": "morgsbrew", "url": "https://www.youtube.com/@MorgsBrew" },
+      { "network": "X", "username": "morgsbrew", "url": "https://x.com/morgsbrew" }
+    ]
+  },
+  "work": [
+    {
+      "name": "Canaan",
+      "position": "Owner & Grower",
+      "location": "Marina Beach, KwaZulu-Natal",
+      "startDate": "2016",
+      "endDate": "",
+      "featured": true,
+      "summary": "My own land on the KwaZulu-Natal coast — I live on it and grow bananas by my own methods.",
+      "highlights": [
+        "Grow, harvest, pack, and move bananas",
+        "Irrigation systems and growing-field design",
+        "Financial management and record keeping",
+        "Data capture and analysis of the land and its systems"
+      ]
+    },
+    {
+      "name": "University of Cape Town",
+      "position": "MSc / PhD Researcher",
+      "location": "Cape Town",
+      "startDate": "2011",
+      "endDate": "2019",
+      "featured": true,
+      "summary": "Postgraduate research training (aquaculture, microbiology, data science).",
+      "highlights": [
+        "Awarded NRF Research Scholarship for scarce skills",
+        "Outreach educator for schools",
+        "Part-time lecturing and teaching of undergraduate coursework",
+        "Research system design and construction",
+        "Conference attendance and presentation",
+        "Part of the original social-media team for the @Ma-Re (MARE_UCT) account"
+      ]
+    },
+    {
+      "name": "London (gap year)",
+      "position": "Events, Hospitality & Landscaping",
+      "location": "London, UK",
+      "startDate": "2006",
+      "endDate": "2006",
+      "featured": false,
+      "summary": "",
+      "highlights": []
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of Cape Town",
+      "area": "Science",
+      "studyType": "Doctor of Philosophy (PhD)",
+      "startDate": "",
+      "endDate": "2023",
+      "featured": true,
+      "thesis": "Ulva as a functional feed: a practical investigation into the effects of Ulva on the growth, consumption, health, and microbiome of the farmed abalone Haliotis midae."
+    },
+    {
+      "institution": "Rhodes University",
+      "area": "Ichthyology & Fisheries Science",
+      "studyType": "BSc Honours",
+      "startDate": "",
+      "endDate": "2010",
+      "featured": true,
+      "thesis": "Evaluation of algae, grown in brewery effluent water, as a potential dietary ingredient for the farmed abalone Haliotis midae."
+    },
+    {
+      "institution": "Rhodes University",
+      "area": "Zoology & Ichthyology",
+      "studyType": "BSc",
+      "startDate": "",
+      "endDate": "2009",
+      "featured": true,
+      "thesis": ""
+    },
+    {
+      "institution": "Graeme College Boys' High School",
+      "area": "Matric exemption; hostel prefect",
+      "studyType": "National Senior Certificate",
+      "startDate": "",
+      "endDate": "2005",
+      "featured": false,
+      "thesis": ""
+    }
+  ],
+  "publications": [
+    {
+      "name": "Why grow Ulva? Its potential role in the future of aquaculture",
+      "publisher": "Perspectives in Phycology",
+      "releaseDate": "2016",
+      "url": "https://doi.org/10.1127/pip/2016/0058",
+      "doi": "10.1127/pip/2016/0058",
+      "authors": "Bolton JJ, Cyrus MD, Brand MJ, Joubert M, Macey B",
+      "summary": ""
+    }
+  ],
+  "references": [],
+  "skills": [
+    { "name": "Data Science in R", "level": "Expert", "keywords": ["tidyverse", "data pipelines", "reproducible analysis", "ggplot2"] },
+    { "name": "Reproducible Research", "level": "Advanced", "keywords": ["Quarto", "Git / GitHub", "renv", "Nix", "literate programming"] },
+    { "name": "Applied AI", "level": "Advanced", "keywords": ["LLM-assisted research & analysis", "data & literature synthesis", "scientific writing support"] },
+    { "name": "Data Engineering", "level": "Advanced", "keywords": ["pipeline design", "data capture & cleaning", "tabular & structured data"] },
+    { "name": "Geospatial Analysis & GIS", "level": "Intermediate", "keywords": ["GDAL / GeoPandas / Rasterio", "MapLibre & PMTiles", "DEM, stream & watershed analysis", "cartography"] },
+    { "name": "Microbiology", "level": "Advanced", "keywords": ["microbiome analysis"] },
+    { "name": "Aquaculture", "level": "Expert", "keywords": ["abalone", "seaweed / Ulva", "system design"] },
+    { "name": "Land & living systems", "level": "Advanced", "keywords": ["growing bananas", "irrigation & water", "soil & land systems", "contextual land observation"] },
+    { "name": "Research", "level": "Expert", "keywords": ["experimental design", "scientific writing"] }
+  ],
+  "meta": {
+    "tagline": "imagine ‹ create ‹ change",
+    "referencesAvailableOnRequest": true,
+    "version": "2026.2",
+    "lastModified": "2026-07-13",
+    "positioning": "generalist-scientist",
+    "communication": [
+      {
+        "type": "Video series",
+        "title": "Morgs Brew (YouTube channel)",
+        "handle": "@MorgsBrew",
+        "url": "https://www.youtube.com/@MorgsBrew",
+        "period": "from 2016",
+        "summary": "Created and ran a 38-video technical how-to channel translating hands-on science and engineering for a general audience: small-scale growing, water systems (DIY ram pumps, drip irrigation, rainwater harvesting), fermentation and home-brewing, and soil, microbiome and DIY tool-making."
+      },
+      {
+        "type": "Popular article",
+        "title": "Zero to Hero: a change of perspective",
+        "venue": "The Fishing and Hunting Journal",
+        "period": "2010/2011",
+        "summary": "Invited guest feature — a popular-science essay on the reproductive strategy of the sea catfish (barbel), written during Rhodes University honours."
+      },
+      {
+        "type": "Blog",
+        "title": "Fresh Rots — science & land blog",
+        "url": "",
+        "period": "2010–2019",
+        "summary": "Self-built personal blog (authored in R with blogdown/Hugo) publishing genuine first-person posts under my own name and long-standing \"Morgs Brew\" handle — spanning marine biology, a TLUD-pyrolysis biochar technical guide, ram-pump irrigation, and rainfall and erosion records from the land."
+      },
+      {
+        "type": "Workshop",
+        "title": "DIY SauerKraut Workshop: Growing your guts superpowers",
+        "date": "2018-12-06",
+        "role": "Co-creator and co-presenter",
+        "collaborators": "Jill Mackay, Dunja Gudegast",
+        "license": "CC-BY 4.0 International",
+        "summary": "Co-created and co-presented a public science workshop on fermentation and the gut microbiome, released under a Creative Commons Attribution 4.0 International licence."
+      }
+    ],
+    "conferences": [
+      { "event": "Phycological Society of Southern Africa", "year": "2012", "date": "2012-06-13", "location": "Transkei, South Africa", "title": "Ulva grown in abalone effluent water as a potential substitute for fishmeal-based feeds for the cultured abalone Haliotis midae", "note": "" },
+      { "event": "World Aquaculture — America", "year": "2013", "date": "2013-02-18", "location": "Nashville, USA", "title": "Ulva grown in abalone effluent water as a potential substitute for fishmeal-based feeds for the cultured abalone Haliotis midae", "note": "" },
+      { "event": "Aquaculture South Africa", "year": "2013", "date": "2013-04-15", "location": "Stellenbosch, South Africa", "title": "The effects of effluent-grown Ulva on growth, immunity and glucose regulation of the cultured abalone Haliotis midae", "note": "" },
+      { "event": "World Aquaculture — Australia", "year": "2014", "date": "2014-06-16", "location": "Adelaide, Australia", "title": "The effects of effluent-grown Ulva on growth, immunity and glucose regulation of the cultured abalone Haliotis midae", "note": "" },
+      { "event": "South African Marine Science Symposium", "year": "2014", "date": "2014-07-16", "location": "Stellenbosch, South Africa", "title": "The effects of effluent-grown Ulva on growth, immunity and glucose regulation of the cultured abalone Haliotis midae", "note": "" },
+      { "event": "Phycological Society of Southern Africa", "year": "2015", "date": "2015-06-22", "location": "St Lucia, South Africa", "title": "The importance of Ulva as a feed supplement for the cultured abalone Haliotis midae", "note": "" },
+      { "event": "Aquaculture South Africa", "year": "2015", "date": "2015-09-20", "location": "Polokwane, South Africa", "title": "Benefits of effluent-grown Ulva as a feed supplement on the growth, health and microbiome of cultured abalone Haliotis midae", "note": "Awarded best presentation; organised and hosted the student activities; managed the @AASA5 account" },
+      { "event": "World Aquaculture — Cape Town", "year": "2017", "date": "2017-06-28", "location": "Cape Town, South Africa", "title": "The use of R, RStudio and GitHub: an introduction to dynamic reporting with R", "note": "Student workshop on using R in science; organised and hosted student activities; designed the conference logo" },
+      { "event": "Bi-annual Growers Symposium", "year": "2017", "date": "2017-07-20", "location": "Durban, South Africa", "title": "Aquaponics and the curious case of Ulva", "note": "Guest speaker" }
+    ]
+  }
+}

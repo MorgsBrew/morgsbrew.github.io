@@ -1,0 +1,83 @@
+/*-- scss:defaults --*/
+// House theme for the web CV — coherent with the Groundtruth portfolio hub.
+// Two voices: Hanken Grotesk (living) + JetBrains Mono (machine). Growth-green accent.
+$font-family-sans-serif: 'Hanken Grotesk', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+$font-family-monospace: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+$body-bg: #F4F5EF;
+$body-color: #15211B;
+$link-color: #14733F;
+$primary: #1E9E57;
+$headings-font-weight: 800;
+
+/*-- scss:rules --*/
+:root {
+  --ground: #F4F5EF; --panel: #FFFFFF; --ink: #15211B; --muted: #566257;
+  --growth: #1E9E57; --growth-deep: #14733F; --line: rgba(21,33,27,0.13);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ground: #0E1512; --panel: #172019; --ink: #E9EDE3; --muted: #93A398;
+    --growth: #4FCE7E; --growth-deep: #3FB86C; --line: rgba(233,237,227,0.15);
+  }
+  body { background: var(--ground) !important; color: var(--ink) !important; }
+  h1, h2, h3, h4, strong, b { color: var(--ink) !important; }
+  a { color: var(--growth-deep) !important; }
+}
+
+body {
+  background: var(--ground);
+  color: var(--ink);
+  max-width: 47rem;
+  margin: 2.6rem auto;
+  padding: 0 1.4rem 4.5rem;
+  line-height: 1.62;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a { color: var(--growth-deep); text-decoration: none;
+    border-bottom: 1px solid color-mix(in srgb, var(--growth) 40%, transparent); }
+a:hover { border-bottom-color: var(--growth); }
+
+/* Section headings — quiet mono-flavoured labels with a hairline, echoing the hub's // markers */
+h2 {
+  font-family: $font-family-monospace;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  color: var(--growth-deep);
+  margin: 2.6rem 0 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--line);
+}
+h3 { font-size: 1.06rem; font-weight: 700; margin: 1.15rem 0 0.15rem; letter-spacing: -0.01em; }
+
+p { margin: 0 0 0.9rem; }
+ul { padding-left: 1.15rem; margin: 0.35rem 0 0.9rem; }
+li { margin: 0.18rem 0; }
+strong, b { font-weight: 700; }
+em { color: var(--muted); }
+
+/* Back-link to the hub */
+.cv-backlink { font-family: $font-family-monospace; font-size: 0.8rem; margin-bottom: 1.5rem; }
+.cv-backlink a { color: var(--muted); border-bottom: 0; }
+.cv-backlink a::before { content: "\2190\00a0"; color: var(--growth); }
+.cv-backlink a:hover { color: var(--growth-deep); }
+
+/* Name block */
+.cv-header { border-bottom: 2px solid var(--growth); padding-bottom: 0.55rem; margin-bottom: 0.85rem; }
+.cv-header h1.title {
+  font-size: clamp(2rem, 5vw, 2.6rem); font-weight: 800; letter-spacing: -0.03em;
+  line-height: 1.02; margin: 0 0 0.2rem;
+}
+.cv-header h3 {
+  color: var(--growth-deep); font-weight: 600; font-size: 1.08rem;
+  text-transform: none; letter-spacing: 0; margin: 0.15rem 0;
+}
+.cv-tagline { color: var(--muted); font-style: italic; }
+
+/* Contact + downloads — machine voice */
+.cv-downloads { font-family: $font-family-monospace; font-size: 0.82rem; margin: 0.55rem 0 1.6rem; }
+.cv-downloads a { margin-right: 0.5rem; }

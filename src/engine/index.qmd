@@ -1,0 +1,86 @@
+---
+format:
+  html:
+    theme: [cosmo, theme.scss]
+    toc: false
+    page-layout: full
+    embed-resources: true
+    title-block-banner: false
+    include-in-header:
+      text: '<meta name="robots" content="noindex, nofollow">'
+    output-file: cv.html      # the hub owns index.html; the detailed web CV lives at /cv.html
+pagetitle: "Dr Morgan John Brand — CV"
+---
+
+```{r setup}
+source("R/render.R")
+cv <- cv_load()
+```
+
+::: {.cv-backlink}
+[morgsbrew — portfolio](index.html)
+:::
+
+::: {.cv-header}
+# `r cv$basics$name` {.title}
+
+### `r cv$basics$label`
+
+[`r cv$meta$tagline`]{.cv-tagline}
+:::
+
+```{r results='asis'}
+emit_contact_line(cv)
+```
+
+::: {.cv-downloads}
+[Download 1-page résumé (PDF)](resume.pdf) · [Download academic CV (PDF)](cv.pdf) · [Machine-readable JSON](resume.json)
+:::
+
+## Summary
+
+```{r results='asis'}
+emit_summary(cv)
+```
+
+## Experience
+
+```{r results='asis'}
+emit_work(cv, "cv")
+```
+
+## Education
+
+```{r results='asis'}
+emit_education(cv, "cv")
+```
+
+## Publications
+
+```{r results='asis'}
+emit_publications(cv)
+```
+
+## Conference Presentations
+
+```{r results='asis'}
+emit_conferences(cv)
+```
+
+## Science Communication & Public Writing
+
+```{r results='asis'}
+emit_communication(cv)
+```
+
+## Skills
+
+```{r results='asis'}
+emit_skills(cv, "cv")
+```
+
+---
+
+::: {style="font-size:0.8rem;color:#8b949e"}
+Built reproducibly from a single `resume.json` (JSON Resume schema) with Quarto · version `r cv$meta$version` · last updated `r cv$meta$lastModified`.
+:::

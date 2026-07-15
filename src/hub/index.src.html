@@ -1,0 +1,398 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>morgsbrew — generalist scientist &amp; grower</title>
+<style>
+  /*__MARGINALIA_FONTS__*/
+
+  /* Single black theme — true near-black ground, cool light text. Coded accents
+     (blue=self · green=work · purple=reading) live only on the // markers;
+     coral is the one rare spark, reserved for the primary action. */
+  :root {
+    --ground: #0A0C0B; --panel: #141614; --ink: #E9EDE3; --muted: #A9B4AC;
+    --blue: #4FA3D1; --green: #4FCE7E; --purple: #A98FE0; --coral: #E8794E;
+    --link: #4FCE7E;
+    --line: rgba(233,237,227,0.14); --line-soft: rgba(233,237,227,0.075);
+    --sans: 'Hanken Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { animation: none !important; transition: none !important; } .caret { display: none !important; } }
+
+  body { background: var(--ground); color: var(--ink); font-family: var(--sans); font-size: 18px; line-height: 1.7; margin: 0; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 26px 120px; }
+  .col { max-width: 640px; margin-left: auto; margin-right: auto; }
+  p { margin: 0 0 1.15em; overflow-wrap: break-word; }
+  em { font-style: italic; }
+  a { color: var(--link); text-decoration: none; border-bottom: 1px solid color-mix(in srgb, var(--link) 45%, transparent); }
+  a:hover { border-bottom-color: var(--link); }
+
+  /* Machine voice (mono) */
+  .mono { font-family: var(--mono); }
+  .kicker { font-family: var(--mono); font-size: 13px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--blue); margin: 0 0 26px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .kicker .dot { width: 7px; height: 7px; background: var(--blue); border-radius: 50%; flex: none; }
+
+  /* Hero */
+  .hero { padding: clamp(56px, 12vw, 118px) 0 clamp(40px, 7vw, 70px); border-bottom: 1px solid var(--line); }
+  .emblem { display: block; margin: 0 0 30px; }
+  .emblem .stem { stroke: var(--green); }
+  .emblem .leaf-a { fill: var(--green); }
+  .emblem .leaf-b { fill: color-mix(in srgb, var(--green) 78%, var(--ground)); }
+  .emblem .node { fill: var(--blue); }
+  h1 { font-family: var(--sans); font-weight: 800; font-size: clamp(46px, 9vw, 92px); line-height: 0.98; letter-spacing: -0.03em; margin: 0 0 18px; text-wrap: balance; max-width: 15ch; }
+  .caret { display: inline-block; width: 0.5ch; height: 0.82em; background: var(--blue); margin-left: 0.08em; vertical-align: -0.04em; animation: caretBlink 1.1s steps(1) infinite; }
+  @keyframes caretBlink { 0%, 48% { opacity: 1; } 52%, 100% { opacity: 0; } }
+  /* Second beat — the fractal / built-once line, a quieter continuation of the headline */
+  .beat { font-family: var(--sans); font-weight: 500; font-size: clamp(20px, 2.8vw, 30px); line-height: 1.2; letter-spacing: -0.015em; color: color-mix(in srgb, var(--ink) 90%, var(--ground)); margin: 0 0 30px; max-width: 24ch; text-wrap: balance; }
+  .lede { font-size: clamp(20px, 2.6vw, 26px); line-height: 1.5; color: var(--ink); font-weight: 400; max-width: 38ch; margin: 0 0 30px; text-wrap: pretty; }
+  .lede b { font-weight: 700; }
+  .byline { font-family: var(--mono); font-size: 13px; color: var(--muted); line-height: 1.95; letter-spacing: 0.01em; }
+  .byline a { color: var(--muted); border-bottom: 1px solid var(--line-soft); }
+  .byline a:hover { color: var(--link); border-bottom-color: var(--link); }
+  .byline a.g { color: var(--link); border-bottom-color: color-mix(in srgb, var(--link) 45%, transparent); }
+
+  /* Hero action nav (mono) — first action is the one coral spark */
+  .actions { font-family: var(--mono); font-size: 13.5px; margin: 0 0 34px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 22px; }
+  .actions a { color: var(--link); border-bottom: 0; display: inline-flex; align-items: baseline; gap: 8px; }
+  .actions a::before { content: "\2192"; color: var(--link); }
+  .actions a:hover { color: color-mix(in srgb, var(--link) 80%, #fff); }
+  .actions a.cta { background: var(--coral); color: #1A0E08; font-weight: 600; padding: 11px 20px; border-radius: 6px; }
+  .actions a.cta::before { content: none; }
+  .actions a.cta:hover { background: color-mix(in srgb, var(--coral) 88%, #fff); color: #1A0E08; }
+
+  /* Sections */
+  .tenet { padding: clamp(46px, 7vw, 78px) 0 0; }
+  .tenet:first-of-type { padding-top: clamp(40px, 6vw, 64px); }
+  /* The // marker is the SOLE section header — lowercase machine-voice, no rule (owner's call). */
+  .marker { font-family: var(--mono); font-size: 19px; font-weight: 700; color: var(--green); letter-spacing: 0.06em; margin: 0 0 22px; }
+  .marker.self { color: var(--blue); }
+  .marker.work { color: var(--green); }
+  .marker.read { color: var(--purple); }
+  /* Section headers are quiet captions now — the WORK below is the main line */
+  h2 { font-family: var(--sans); font-weight: 600; font-size: clamp(20px, 2.4vw, 24px); line-height: 1.25; letter-spacing: -0.01em; margin: 0 0 16px; text-wrap: balance; max-width: 32ch; }
+  .tenet p { color: color-mix(in srgb, var(--ink) 88%, var(--ground)); }
+  /* // 01 self-statement — promoted to a lede: larger, full-ink, narrow measure */
+  .tenet p.lead { font-size: 21px; line-height: 1.55; font-weight: 450; color: var(--ink); max-width: 42ch; text-wrap: pretty; margin: 0; }
+
+  /* ===== // 02 — things you can open : coded specimen-cards ===================
+     Each openable artifact = one rounded panel. Colour discipline: the accent lives in
+     the HEADER CHIPS (type-keyed: purple = scholarly, green = made) — the monogram and
+     category pill carry it; the card body and border stay neutral/hairline AT REST.
+     The border brightens and the "open" signpost blooms to the accent on hover.        */
+
+  .worklist{ margin:8px 0 0; display:flex; flex-direction:column; gap:20px; }
+
+  .wcard{
+    --ac: var(--green);
+    position:relative; display:block;
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:15px;
+    padding:20px 22px 18px;
+    color:var(--ink); text-decoration:none;
+    transition:border-color .18s ease, background .18s ease;
+  }
+  .wcard.read { --ac: var(--purple); }   /* scholarly — thesis, code, paper */
+  .wcard.made { --ac: var(--green);  }   /* made/public — channel, talks, writing, map */
+
+  a.wcard{ border-bottom:0; cursor:pointer; }
+  a.wcard:hover{
+    background:color-mix(in srgb, var(--ac) 6%, var(--panel));
+    border-color:color-mix(in srgb, var(--ac) 42%, var(--line));
+  }
+  a.wcard:focus-visible{ outline:2px solid var(--ac); outline-offset:3px; }
+
+  .wc-head{ display:flex; align-items:center; gap:10px; margin:0 0 14px; flex-wrap:wrap; }
+
+  /* type badge — the card's primary coded mark now lives here (not on a rail) */
+  .wc-mono{
+    flex:none; width:42px; height:42px;
+    display:inline-flex; align-items:center; justify-content:center;
+    border-radius:12px;
+    font-family:var(--mono); font-weight:700; font-size:13px; letter-spacing:-.01em;
+    color:var(--ac);
+    background:color-mix(in srgb, var(--ac) 15%, var(--panel));
+    border:1px solid color-mix(in srgb, var(--ac) 34%, transparent);
+    font-variant-numeric:tabular-nums;
+  }
+
+  /* category — the second coded chip: soft accent pill with a keyed dot */
+  .wc-cat{
+    display:inline-flex; align-items:center; gap:7px;
+    font-family:var(--mono); font-size:12px; letter-spacing:.05em; text-transform:uppercase;
+    color:color-mix(in srgb, var(--ac) 72%, var(--ink));
+    background:color-mix(in srgb, var(--ac) 10%, var(--panel));
+    border:1px solid color-mix(in srgb, var(--ac) 24%, transparent);
+    padding:5px 12px; border-radius:999px; line-height:1;
+  }
+  .wc-cat .d{ width:6px; height:6px; border-radius:50%; background:var(--ac); flex:none; }
+
+  /* status — quiet metadata pill; only its dot takes the accent */
+  .wc-status{
+    margin-left:auto;
+    display:inline-flex; align-items:center; gap:6px;
+    font-family:var(--mono); font-size:11.5px; letter-spacing:.03em;
+    color:var(--muted);
+    background:var(--line-soft);
+    border:1px solid var(--line);
+    padding:4px 11px; border-radius:999px; line-height:1; white-space:nowrap;
+  }
+  .wc-status .d{ width:6px; height:6px; border-radius:50%; background:var(--ac); flex:none; }
+
+  .wc-title{
+    font-family:var(--sans); font-weight:700; font-size:24px; line-height:1.2;
+    letter-spacing:-.01em; color:var(--ink); margin:0 0 6px; text-wrap:balance;
+  }
+  .wc-title em{ font-style:italic; }
+
+  .wc-meta{
+    font-family:var(--mono); font-size:12.5px; color:var(--muted);
+    letter-spacing:.02em; margin:0 0 11px;
+  }
+
+  .wc-desc{
+    color:color-mix(in srgb, var(--ink) 82%, var(--ground));
+    font-size:16.5px; line-height:1.58; margin:0; max-width:60ch;
+  }
+  .wc-desc em{ font-style:italic; }
+  .wc-desc b{ color:var(--ink); font-weight:700; }
+
+  .wc-foot{ display:flex; align-items:center; gap:12px; margin:16px 0 0; flex-wrap:wrap; }
+
+  /* plain muted signpost — the accent blooms only on hover (one hue, waking up) */
+  .wc-open{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:var(--mono); font-size:13px; font-weight:600; letter-spacing:.01em;
+    color:var(--muted); background:none; border:0; padding:0;
+    line-height:1; white-space:nowrap;
+    transition:color .16s ease;
+  }
+  a.wcard:hover .wc-open{ color:var(--ac); }
+
+  /* .turn — emphasis inside the // 03 GitHub line */
+  .turn { font-weight: 700; color: var(--ink); }
+
+  /* Hinge — one centered spine line, the breath before the close */
+  .hinge { text-align: center; border-top: 1px solid var(--line); margin: clamp(56px, 8vw, 92px) auto 0; padding: clamp(52px, 7vw, 80px) 20px 0; max-width: 780px; }
+  .hinge p { font-family: var(--sans); font-weight: 600; font-size: clamp(26px, 4.2vw, 42px); line-height: 1.14; letter-spacing: -0.02em; color: var(--ink); margin: 0 auto; max-width: 18ch; text-wrap: balance; }
+
+  /* Closing */
+  .close { padding: clamp(48px, 7vw, 72px) 0 0; border-top: 1px solid var(--line); margin-top: clamp(52px, 7vw, 80px); }
+
+  /* Colophon */
+  footer.colophon { margin-top: clamp(56px, 8vw, 90px); padding-top: 22px; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 13px; line-height: 1.95; color: var(--muted); }
+  footer.colophon a { color: var(--muted); border-bottom: 1px solid var(--line-soft); }
+  footer.colophon a:hover { color: var(--link); }
+  footer.colophon a.g { color: var(--link); }
+  footer .seed { display: inline-block; width: 8px; height: 8px; background: var(--green); border-radius: 50%; margin-right: 8px; vertical-align: middle; }
+
+  @media (max-width: 560px) {
+    .wrap { padding: 0 18px 80px; }
+    .lede { max-width: none; }
+    h1 { max-width: none; }
+    .beat { max-width: none; }
+    .wcard { padding: 18px 16px 16px; }
+    .wc-title { font-size: 20px; }
+    .wc-desc { font-size: 16px; }
+    .wc-head { gap: 9px; }
+    .wc-status { margin-left: 0; }
+  }
+</style>
+
+<div class="wrap">
+
+  <!-- ===== HERO ===== -->
+  <header class="hero">
+    <div class="col">
+      <svg class="emblem" width="48" height="56" viewBox="0 0 48 56" role="img" aria-label="A seedling with a cursor at its tip" xmlns="http://www.w3.org/2000/svg">
+        <path class="stem" d="M24 54 L24 20" fill="none" stroke-width="3" stroke-linecap="round"/>
+        <path class="leaf-a" d="M24 34 C 13 34 6 27 6 16 C 18 16 24 23 24 34 Z"/>
+        <path class="leaf-b" d="M24 29 C 35 29 42 22 42 11 C 30 11 24 18 24 29 Z"/>
+        <rect class="node" x="21" y="2" width="6" height="12" rx="1"/>
+      </svg>
+      <p class="kicker"><span class="dot"></span> morgsbrew · imagine ‹ create ‹ change</p>
+      <h1>I build the thing to understand the thing.<span class="caret" aria-hidden="true"></span></h1>
+      <p class="beat">Built once, it holds at every layer.</p>
+      <p class="lede">I own and live on a stretch of the KwaZulu-Natal coast — I grow bananas my own way, and I'm less interested in farming this land than in coming to <b>understand</b> it.</p>
+      <nav class="actions">
+        <a class="cta" href="cv.html">read the cv →</a>
+        <a href="resume.pdf">résumé (pdf)</a>
+        <a href="cv.pdf">academic cv (pdf)</a>
+      </nav>
+      <p class="byline"><a class="g" href="https://www.youtube.com/@MorgsBrew" target="_blank" rel="noopener">@MorgsBrew</a> · <a href="https://github.com/MorgsBrew" target="_blank" rel="noopener">github/MorgsBrew</a> · <a href="https://x.com/morgsbrew" target="_blank" rel="noopener">x.com/morgsbrew</a><br>marina beach, kwazulu-natal</p>
+    </div>
+  </header>
+
+  <!-- ===== 01 — how i work ===== -->
+  <section class="tenet">
+    <div class="col">
+      <p class="marker self">// 01 &nbsp;how i work</p>
+      <p class="lead">I'm a generalist by nature. I trained as a scientist — aquaculture, then microbiology — taught myself to build, and now grow on my own land. What connects those isn't a subject; it's a way of working: I read how a system behaves — a microbiome, a hillside, a codebase — closely enough to work with how it already runs.</p>
+    </div>
+  </section>
+
+  <!-- ===== 02 — selected work ===== -->
+  <section class="tenet">
+    <div class="col">
+      <p class="marker work">// 02 &nbsp;things you can open</p>
+
+      <div class="worklist">
+
+        <!-- 1 · thesis — scholarly (purple) · whole card opens OpenUCT -->
+        <a class="wcard read" href="https://open.uct.ac.za/items/96bb2fdc-d552-4698-949f-0734ddc0d5f1" target="_blank" rel="noopener">
+          <div class="wc-head">
+            <span class="wc-mono">PhD</span>
+            <span class="wc-cat"><span class="d"></span> doctoral thesis · uct</span>
+            <span class="wc-status"><span class="d"></span> open access</span>
+          </div>
+          <h3 class="wc-title"><em>Ulva</em> as a functional feed</h3>
+          <p class="wc-meta">PhD · 2023</p>
+          <p class="wc-desc">My doctoral thesis — the effects of <em>Ulva</em> on the growth, consumption, health, and microbiome of the farmed abalone <em>Haliotis midae</em>. Open-access on the University of Cape Town repository: the full record, permanently reachable.</p>
+          <div class="wc-foot">
+            <span class="wc-open">OpenUCT&#8202;&#8599;</span>
+          </div>
+        </a>
+
+        <!-- 1b · thesis code — scholarly (purple) · opens the public repo -->
+        <a class="wcard read" href="https://github.com/MorgsBrew/brand_2021" target="_blank" rel="noopener">
+          <div class="wc-head">
+            <span class="wc-mono">git</span>
+            <span class="wc-cat"><span class="d"></span> thesis code · github</span>
+            <span class="wc-status"><span class="d"></span> public repo</span>
+          </div>
+          <h3 class="wc-title">Thesis code, in R</h3>
+          <p class="wc-meta">brand_2021 · chapters 2&#8211;4 · data included</p>
+          <p class="wc-desc">The reproducible R behind the thesis — data handling, plotting, and analysis for each experimental chapter, with the data objects to recreate the results. A workflowr project, public on GitHub.</p>
+          <div class="wc-foot">
+            <span class="wc-open">github&#8202;&#8599;</span>
+          </div>
+        </a>
+
+        <!-- 2 · peer-reviewed paper — scholarly (purple) · whole card opens DOI -->
+        <a class="wcard read" href="https://doi.org/10.1127/pip/2016/0058" target="_blank" rel="noopener">
+          <div class="wc-head">
+            <span class="wc-mono">DOI</span>
+            <span class="wc-cat"><span class="d"></span> peer-reviewed</span>
+            <span class="wc-status"><span class="d"></span> published</span>
+          </div>
+          <h3 class="wc-title">Why grow <em>Ulva</em>?</h3>
+          <p class="wc-meta">Perspectives in Phycology</p>
+          <p class="wc-desc">Its potential role in the future of aquaculture. Bolton, Cyrus, <b>Brand</b>, Joubert &amp; Macey (2016) — externally validated, permanently reachable.</p>
+          <div class="wc-foot">
+            <span class="wc-open">DOI&#8202;&#8599;</span>
+          </div>
+        </a>
+
+        <!-- 3 · YouTube channel — made/public (green) · whole card opens the channel -->
+        <a class="wcard made" href="https://www.youtube.com/@MorgsBrew" target="_blank" rel="noopener">
+          <div class="wc-head">
+            <span class="wc-mono">YT</span>
+            <span class="wc-cat"><span class="d"></span> science communication</span>
+            <span class="wc-status"><span class="d"></span> live</span>
+          </div>
+          <h3 class="wc-title">@MorgsBrew</h3>
+          <p class="wc-meta">38 videos · from 2016</p>
+          <p class="wc-desc">A how-to channel translating hands-on science — ram pumps, biochar gasifiers, the soil food web, fermentation — for a general audience.</p>
+          <div class="wc-foot">
+            <span class="wc-open">watch&#8202;&#8599;</span>
+          </div>
+        </a>
+
+        <!-- 4 · conference record — made/public (green) · opens its own speaking-record page -->
+        <a class="wcard made" href="talks/index.html">
+          <div class="wc-head">
+            <span class="wc-mono">&#215;9</span>
+            <span class="wc-cat"><span class="d"></span> conference record</span>
+            <span class="wc-status"><span class="d"></span> 2012–2017</span>
+          </div>
+          <h3 class="wc-title">Nine talks, 2012&#8211;2017</h3>
+          <p class="wc-meta">three continents · best-presentation award</p>
+          <p class="wc-desc">PSSA, World Aquaculture (Nashville · Adelaide · Cape Town), SAMSS, IGA — abalone &amp; <em>Ulva</em> microbiome, ulvan, glucose regulation. Best-presentation award, AASA 2015.</p>
+          <div class="wc-foot">
+            <span class="wc-open">the talks&#8202;&#8599;</span>
+          </div>
+        </a>
+
+        <!-- 5 · Fresh Rots writing — made/public (green) · whole card opens the collection -->
+        <a class="wcard made" href="writing/index.html">
+          <div class="wc-head">
+            <span class="wc-mono">Rmd</span>
+            <span class="wc-cat"><span class="d"></span> writing · 2010&#8211;2019</span>
+            <span class="wc-status"><span class="d"></span> collected</span>
+          </div>
+          <h3 class="wc-title">Fresh Rots — collected writing</h3>
+          <p class="wc-meta">literate R Markdown · hosted here</p>
+          <p class="wc-desc">A collection of my writing, hosted here — the barbel's tale (a guest piece), a backyard-biochar build, ram-pump engineering, worm barrels, and notes from the land. Literate R Markdown: prose, code, and data in one document.</p>
+          <div class="wc-foot">
+            <span class="wc-open">read the collection&#8202;&#8599;</span>
+          </div>
+        </a>
+
+        <!-- 6 · geospatial / cartography — made/public (green) · opens the print-grade map PDF -->
+        <a class="wcard made" href="assets/kzn-rivers-print.pdf" target="_blank" rel="noopener">
+          <div class="wc-head">
+            <span class="wc-mono">GIS</span>
+            <span class="wc-cat"><span class="d"></span> geospatial · cartography</span>
+            <span class="wc-status"><span class="d"></span> print-ready</span>
+          </div>
+          <h3 class="wc-title">River systems &amp; ocean bathymetry</h3>
+          <p class="wc-meta">KZN south coast · print-grade vector · 43&#8202;MB</p>
+          <p class="wc-desc">SRTM hillshaded terrain, NFEPA rivers and watershed delineation, GEBCO ocean bathymetry and the 200&#8202;m shelf-break — the coast I live on, composited in matplotlib. A full interactive web-GIS of South African geology (83 sites, 16,417 features) is in build.</p>
+          <div class="wc-foot">
+            <span class="wc-open">print PDF&#8202;&#8599;</span>
+          </div>
+        </a>
+
+        <!-- 7 · radio savimbi — made/public (green) · whole card opens the live site -->
+        <a class="wcard made" href="https://morgsbrew.github.io/radio-savimbi/" target="_blank" rel="noopener">
+          <div class="wc-head">
+            <span class="wc-mono">RS</span>
+            <span class="wc-cat"><span class="d"></span> web app · music</span>
+            <span class="wc-status"><span class="d"></span> live</span>
+          </div>
+          <h3 class="wc-title">Radio Savimbi</h3>
+          <p class="wc-meta">searchable · curated YouTube shares</p>
+          <p class="wc-desc">Reid's Radical Music Archive — a searchable, radio-style page collecting a friend's curated YouTube music shares. A small web app I built and host.</p>
+          <div class="wc-foot">
+            <span class="wc-open">tune in&#8202;&#8599;</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 03 — in the open ===== -->
+  <section class="tenet">
+    <div class="col">
+      <p class="marker read">// 03 &nbsp;find me on github</p>
+      <p><a href="https://github.com/MorgsBrew" target="_blank" rel="noopener">github.com/morgsbrew</a> — the code is public. This page and my CV build themselves from one file and rebuild on every push, so what you're reading is <span class="turn">the proof of the claim</span>, not a description of it. Nothing here is kept by hand twice.</p>
+    </div>
+  </section>
+
+  <!-- ===== HINGE ===== -->
+  <div class="hinge">
+    <p>I'd rather understand a system than run it.</p>
+  </div>
+
+  <!-- ===== CLOSING ===== -->
+  <section class="close">
+    <div class="col">
+      <p class="marker">// the close</p>
+      <h2>Bring me a system worth understanding.</h2>
+      <p>The ones I like are messy and a little stubborn — real systems that don't give up their logic on the first read. If you're living inside one, tell me about it — I'm <a href="https://x.com/morgsbrew" target="_blank" rel="noopener">@morgsbrew</a> on X.</p>
+    </div>
+  </section>
+
+  <!-- ===== COLOPHON ===== -->
+  <div class="col">
+    <footer class="colophon">
+      <p><span class="seed"></span>morgsbrew · portfolio · <em>imagine ‹ create ‹ change</em></p>
+      <p>The credentialed record — <a class="g" href="https://orcid.org/0000-0002-1392-4742" target="_blank" rel="noopener">ORCID</a> · <a href="https://www.linkedin.com/in/morgan-brand" target="_blank" rel="noopener">LinkedIn</a> · <a href="cv.html">the CV</a> — is here for whoever wants it. Reached, not shouted.</p>
+    </footer>
+  </div>
+
+</div>

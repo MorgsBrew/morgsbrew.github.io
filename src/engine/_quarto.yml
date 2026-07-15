@@ -1,0 +1,15 @@
+project:
+  title: "Morgan Brand — CV"
+  output-dir: ../output
+  execute-dir: file
+
+execute:
+  echo: false
+  warning: false
+  message: false
+
+# The CV renders no figures. Pin knitr's graphics device to base-R `pdf`,
+# which needs no cairo/X11 — identical behaviour on macOS and Linux CI.
+knitr:
+  opts_chunk:
+    dev: "pdf"

@@ -1,0 +1,64 @@
+---
+format:
+  typst:
+    papersize: a4
+    margin:
+      x: 1.8cm
+      y: 1.8cm
+    fontsize: 11pt
+    section-numbering: ""
+    toc: false
+---
+
+```{r setup}
+source("R/render.R")
+cv <- cv_load()
+```
+
+```{r results='asis'}
+cat(sprintf("# %s\n\n", cv$basics$name))
+cat(sprintf("*%s — %s*\n\n", cv$basics$label, cv$meta$tagline))
+emit_contact_line(cv, sep = " · ")
+```
+
+## Summary
+
+```{r results='asis'}
+emit_summary(cv)
+```
+
+## Education
+
+```{r results='asis'}
+emit_education(cv, "cv")
+```
+
+## Research & Work Experience
+
+```{r results='asis'}
+emit_work(cv, "cv")
+```
+
+## Publications
+
+```{r results='asis'}
+emit_publications(cv)
+```
+
+## Conference Presentations
+
+```{r results='asis'}
+emit_conferences(cv)
+```
+
+## Science Communication & Public Writing
+
+```{r results='asis'}
+emit_communication(cv)
+```
+
+## Skills
+
+```{r results='asis'}
+emit_skills(cv, "cv")
+```
