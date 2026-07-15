@@ -2,7 +2,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>morgsbrew — generalist scientist &amp; grower</title>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 56'%3E%3Crect x='13.5' y='49.5' width='21' height='3.6' rx='1.8' fill='%234FA3D1'/%3E%3Cpath d='M24 49 C 13 41.5 13 24.5 24 11.5 C 35 24.5 35 41.5 24 49 Z' fill='%234FCE7E'/%3E%3Cpath d='M24 47 V16' stroke='%232E7D4F' stroke-width='1.3' fill='none'/%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 56'%3E%3Cpath d='M24 53 C 23.7 46 24 39 24 33' fill='none' stroke='%234FCE7E' stroke-width='2.8' stroke-linecap='round'/%3E%3Cpath d='M24 33 C 16.5 34 11 29 10.5 19 C 17.5 21 22.5 26 24 33 Z' fill='%234FCE7E'/%3E%3Cpath d='M23 32 Q 16.5 26 11.5 20' fill='none' stroke='%232E7D4F' stroke-width='1.3'/%3E%3Crect x='21.4' y='6' width='5.2' height='26' rx='2.6' transform='rotate(6 24 32)' fill='%234FA3D1'/%3E%3C/svg%3E">
 <style>
   /*__MARGINALIA_FONTS__*/
 
@@ -39,6 +39,7 @@
   /* Hero */
   .hero { padding: clamp(56px, 12vw, 118px) 0 clamp(40px, 7vw, 70px); border-bottom: 1px solid var(--line); }
   .emblem { display: block; margin: 0 0 30px; }
+  .emblem .stem { stroke: var(--green); fill: none; }
   .emblem .leaf { fill: var(--green); }
   .emblem .vein { stroke: color-mix(in srgb, var(--green) 52%, var(--ground)); fill: none; }
   .emblem .cursor { fill: var(--blue); animation: caretBlink 1.1s infinite; }
@@ -207,10 +208,11 @@
   <!-- ===== HERO ===== -->
   <header class="hero">
     <div class="col">
-      <svg class="emblem" width="48" height="56" viewBox="0 0 48 56" role="img" aria-label="A leaf growing from a terminal cursor" xmlns="http://www.w3.org/2000/svg">
-        <rect class="cursor" x="13.5" y="49.5" width="21" height="3.6" rx="1.8"/>
-        <path class="leaf" d="M24 49 C 13 41.5 13 24.5 24 11.5 C 35 24.5 35 41.5 24 49 Z"/>
-        <path class="vein" d="M24 47 V16" stroke-width="1.3" stroke-linecap="round"/>
+      <svg class="emblem" width="48" height="56" viewBox="0 0 48 56" role="img" aria-label="A seedling whose growing tip is a blinking terminal cursor" xmlns="http://www.w3.org/2000/svg">
+        <path class="stem" d="M24 53 C 23.7 46 24 39 24 33" fill="none" stroke-width="2.8" stroke-linecap="round"/>
+        <path class="leaf" d="M24 33 C 16.5 34 11 29 10.5 19 C 17.5 21 22.5 26 24 33 Z"/>
+        <path class="vein" d="M23 32 Q 16.5 26 11.5 20" fill="none" stroke-width="1.3" stroke-linecap="round"/>
+        <rect class="cursor" x="21.4" y="6" width="5.2" height="26" rx="2.6" transform="rotate(6 24 32)"/>
       </svg>
       <p class="kicker"><span class="dot"></span> morgsbrew · imagine ‹ create ‹ change</p>
       <h1>I build the thing to understand the thing.<span class="caret" aria-hidden="true"></span></h1>
